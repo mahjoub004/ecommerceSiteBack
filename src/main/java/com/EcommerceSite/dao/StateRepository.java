@@ -12,6 +12,8 @@ import java.util.List;
 @RepositoryRestResource // http://localhost:8080/api/states
 public interface StateRepository extends JpaRepository<State , Integer> {
 
+    // SELECT * FROM state where code = ?
     //http://localhost:8080/api/states/search/findByCountryCode?code=IN
-    List<State> findCountryCode(@Param("code") String code);
+
+    List<State> findByCountryCode(@Param("code") String code);
 }

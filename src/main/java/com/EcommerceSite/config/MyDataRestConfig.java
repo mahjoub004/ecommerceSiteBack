@@ -1,7 +1,9 @@
 package com.EcommerceSite.config;
 
+import com.EcommerceSite.entity.Country;
 import com.EcommerceSite.entity.Product;
 import com.EcommerceSite.entity.ProductCategory;
+import com.EcommerceSite.entity.State;
 import org.hibernate.type.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -44,6 +46,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         //call an internal helper method
         config.exposeIdsFor(Product.class);
         config.exposeIdsFor(ProductCategory.class);
+        config.exposeIdsFor(Country.class);
+        config.exposeIdsFor(State.class);
     }
 
 }
