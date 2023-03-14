@@ -10,8 +10,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import javax.persistence.EntityManager;
-;import java.util.ArrayList;
-import java.util.List;
+
 
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
@@ -35,15 +34,16 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
-
         // disable HTTP methods for ProductCategory: PUT, POST and DELETE
 
         config.getExposureConfiguration()
                 .forDomainType(ProductCategory.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+
         //call an internal helper method
         config.exposeIdsFor(Product.class);
+        config.exposeIdsFor(ProductCategory.class);
     }
 
 }
