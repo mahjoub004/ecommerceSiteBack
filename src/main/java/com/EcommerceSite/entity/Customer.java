@@ -25,10 +25,6 @@ public class Customer {
     private Set<Order> ordersList;
 
 
-
-
-
-
     public void add (Order order){
         if (order != null) {
             if (ordersList == null) {
