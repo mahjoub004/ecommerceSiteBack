@@ -1,6 +1,6 @@
 package com.EcommerceSite.entity;
 
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -11,7 +11,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "orders")
-@Data // automatically generate the getter/setter
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor // automatically generate the getter/setter
 public class Order {
     @Id
     @Column(name = "id", nullable = false)

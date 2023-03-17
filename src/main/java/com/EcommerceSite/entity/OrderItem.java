@@ -1,13 +1,16 @@
 package com.EcommerceSite.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "order_item")
-@Data // automatically generate the getter/setter
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor// automatically generate the getter/setter
 public class OrderItem {
 
 
